@@ -7,14 +7,13 @@
 #include <stdio.h>
 #include <assert.h>
 
-/// @brief 
-/// @param data 
-/// @param size 
-/// @param filename 
-/// @return 
-/// @note Функция использует O_TRUNC при открытии файла
 ssize_t StoreDump(const StatData *data, size_t size, const char *filename)
 {
+    if (data == NULL || filename == NULL) {
+        errno = EINVAL;
+        perror("StoreDump: invalid arguments");
+        return -1;
+    }
     if (size > MAX_STATDATA_ARRAY_SIZE) {
         errno = ERANGE;
         perror("StoreDump: size exceeds MAX_STATDATA_ARRAY_SIZE");
@@ -85,5 +84,5 @@ ssize_t StoreDump(const StatData *data, size_t size, const char *filename)
         return -1;
     }
     
-    return (size_t)written;
+    return (ssize_t)written / sizeof(StatData);
 }
