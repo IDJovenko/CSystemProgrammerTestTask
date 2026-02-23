@@ -3,6 +3,8 @@
 #include "../../../include/contracts.h"
 #include <string.h>
 #include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 static void MergePair(StatData* target, const StatData* source)
 {
