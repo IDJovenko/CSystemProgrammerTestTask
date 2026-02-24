@@ -21,7 +21,7 @@ ssize_t JoinDump(StatData *data1, size_t size1, StatData *data2, size_t size2, S
 {
     if (result == NULL || (size1 > 0 && data1 == NULL) || (size2 > 0 && data2 == NULL)) {
         errno = EINVAL;
-        perror("JoinDump: invalid arguments");
+        perror("JoinDump");
         return -1;
     }
 

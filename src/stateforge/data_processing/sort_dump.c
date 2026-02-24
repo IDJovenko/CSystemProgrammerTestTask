@@ -10,9 +10,9 @@ void SortDump(StatData *data, size_t size)
 
 void SortDumpWithComparator(StatData *data, size_t size, int (*cmp)(const void *, const void *))
 {
-    if (data == NULL || size == 0) {
+    if (data == NULL) {
         errno = EINVAL;
-        perror("SortDump: invalid arguments");
+        perror("SortDump");
         return;
     }
 

@@ -1,8 +1,8 @@
 #include "stat_data.h"
 #include "stateforge/data_processing/join_dump.h"
 #include "stateforge/data_processing/sort_dump.h"
-#include "stateforge/serializer/load_dump.h"
-#include "stateforge/serializer/store_dump.h"
+#include "serializer/load_dump.h"
+#include "serializer/store_dump.h"
 #include <stdio.h>
 #include <errno.h>
 #include <stdlib.h>
@@ -10,7 +10,7 @@
 int fprint_statdata(FILE* stream, const StatData* data) {
     if (stream == NULL || data == NULL) {
         errno = EINVAL;
-        perror("fprint_statdata: Invalid arguments");
+        perror("fprint_statdata");
         return -1;
     }
     // Получаем значение primary
@@ -76,7 +76,10 @@ int main(int argc, char *argv[]) {
         fprint_statdata(stdout, &joined[i]);
     }
 
-    if (StoreDump(joined, (size_t)joined_size, output_path) < 0) {
+    StatData empty_stub = {.id = 0, .count = 0, .cost = 0.0f, .primary = 0, .mode = 0};
+    const StatData *to_store = (joined_size == 0) ? &empty_stub : joined;
+
+    if (StoreDump(to_store, (size_t)joined_size, output_path) < 0) {
         free(data1);
         free(data2);
         free(joined);
