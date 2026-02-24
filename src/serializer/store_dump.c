@@ -1,6 +1,6 @@
-#include "../../../include/stateforge/serializer/store_dump.h"
-#include "../../../include/stateforge/serializer/dump_header.h"
-#include "../../../include/contracts.h"
+#include "include/serializer/store_dump.h"
+#include "include/serializer/dump_header.h"
+#include "include/contracts.h"
 #include <unistd.h>
 #include <fcntl.h>
 #include <errno.h>
@@ -11,7 +11,7 @@ ssize_t StoreDump(const StatData *data, size_t size, const char *filename)
 {
     if (data == NULL || filename == NULL) {
         errno = EINVAL;
-        perror("StoreDump: invalid arguments");
+        perror("StoreDump");
         return -1;
     }
     if (size > MAX_STATDATA_ARRAY_SIZE) {

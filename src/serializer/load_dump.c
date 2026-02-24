@@ -1,6 +1,6 @@
-#include "../../../include/stateforge/serializer/load_dump.h"
-#include "../../../include/stateforge/serializer/dump_header.h"
-#include "../../../include/contracts.h"
+#include "include/serializer/load_dump.h"
+#include "include/serializer/dump_header.h"
+#include "include/contracts.h"
 #include <unistd.h>
 #include <fcntl.h>
 #include <errno.h>
@@ -35,7 +35,7 @@ ssize_t LoadDump(StatData** data, const char* filename)
 {
     if (data == NULL || filename == NULL) {
         errno = EINVAL;
-        perror("LoadDump: invalid arguments");
+        perror("LoadDump");
         return -1;
     }
 
