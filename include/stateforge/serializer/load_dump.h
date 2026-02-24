@@ -2,7 +2,7 @@
 #define LOAD_DUMP_H
 
 #include <sys/types.h>
-#include "../../stat_data.h"
+#include "stat_data.h"
 
 /// @brief Loads the StatData array from a file.
 /// @param[out] data Pointer to the array of StatData.

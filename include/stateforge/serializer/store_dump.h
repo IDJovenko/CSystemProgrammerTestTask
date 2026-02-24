@@ -1,7 +1,7 @@
 #ifndef STORE_DUMP_H
 #define STORE_DUMP_H
 
-#include "../../stat_data.h"
+#include "stat_data.h"
 #include <sys/types.h>
 #include <stddef.h>
 

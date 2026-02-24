@@ -1,7 +1,7 @@
 #ifndef DUMP_HEADER_H
 #define DUMP_HEADER_H
 
-#include "../../stat_data.h"
+#include "stat_data.h"
 #include <stddef.h>
 
 // Для выравнивания при чтении/записи с помощью union

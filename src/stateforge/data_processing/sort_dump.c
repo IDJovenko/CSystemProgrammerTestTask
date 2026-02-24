@@ -1,4 +1,4 @@
-#include "../../../include/stateforge/data_processing/sort_dump.h"
+#include "stateforge/data_processing/sort_dump.h"
 #include <stdlib.h>
 #include <errno.h>
 #include <stdio.h>

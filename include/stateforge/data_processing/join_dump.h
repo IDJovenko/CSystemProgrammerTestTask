@@ -1,7 +1,7 @@
 #ifndef JOIN_DUMP_H
 #define JOIN_DUMP_H
 
-#include "../../stat_data.h"
+#include "stat_data.h"
 #include <stddef.h>
 #include <sys/types.h>
 

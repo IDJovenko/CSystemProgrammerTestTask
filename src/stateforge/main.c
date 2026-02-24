@@ -1,8 +1,8 @@
-#include "../../include/stat_data.h"
-#include "../../include/stateforge/data_processing/join_dump.h"
-#include "../../include/stateforge/data_processing/sort_dump.h"
-#include "../../include/stateforge/serializer/load_dump.h"
-#include "../../include/stateforge/serializer/store_dump.h"
+#include "stat_data.h"
+#include "stateforge/data_processing/join_dump.h"
+#include "stateforge/data_processing/sort_dump.h"
+#include "stateforge/serializer/load_dump.h"
+#include "stateforge/serializer/store_dump.h"
 #include <stdio.h>
 #include <errno.h>
 #include <stdlib.h>

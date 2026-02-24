@@ -1,7 +1,7 @@
 #ifndef SORT_DUMP_H
 #define SORT_DUMP_H
 
-#include "../../stat_data.h"
+#include "stat_data.h"
 #include <stddef.h>
 
 /// @brief Sorts the StatData array by the 'cost' field in ascending order

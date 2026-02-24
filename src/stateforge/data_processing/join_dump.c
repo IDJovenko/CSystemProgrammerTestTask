@@ -1,6 +1,6 @@
-#include "../../../include/stateforge/data_processing/join_dump.h"
-#include "../../../include/stateforge/data_processing/sort_dump.h"
-#include "../../../include/contracts.h"
+#include "stateforge/data_processing/join_dump.h"
+#include "stateforge/data_processing/sort_dump.h"
+#include "contracts.h"
 #include <string.h>
 #include <errno.h>
 #include <stdio.h>
@@ -8,6 +8,7 @@
 
 static void MergePair(StatData* target, const StatData* source)
 {
+    // FIXME - возможно, стоит проверять на переполнение count и cost
     target->count += source->count;
     target->cost  += source->cost;
     if (source->primary == 0)
