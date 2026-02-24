@@ -58,19 +58,19 @@ ssize_t JoinDump(StatData *data1, size_t size1, StatData *data2, size_t size2, S
         } else if (i >= size1 || data2[j].id < data1[i].id) {
             current = data2[j++];
         } else {
-            /* id равны */
+            // id равны
             current = data1[i++];
             MergePair(&current, &data2[j]);
             j++;
         }
 
-        /* агрегируем одинаковые id из data1 */
+        // агрегируем одинаковые id из data1
         while (i < size1 && data1[i].id == current.id) {
             MergePair(&current, &data1[i]);
             i++;
         }
 
-        /* агрегируем одинаковые id из data2 */
+        // агрегируем одинаковые id из data2
         while (j < size2 && data2[j].id == current.id) {
             MergePair(&current, &data2[j]);
             j++;
