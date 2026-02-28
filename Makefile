@@ -1,7 +1,7 @@
 CC := gcc
 CSTD := -std=c17
 CFLAGS := $(CSTD) -Wall -Wextra -Werror
-CPPFLAGS := -D_GNU_SOURCE -I. -Iinclude
+CPPFLAGS := -D_GNU_SOURCE -I. -Isrc
 
 OBJ_DIR := build/obj
 BIN_DIR := build/bin
