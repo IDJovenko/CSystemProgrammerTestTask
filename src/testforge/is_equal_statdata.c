@@ -1,8 +1,7 @@
 #include "testforge/is_equal_statdata.h"
+#include "precision.h"
 #include <math.h>
-
-// TODO: уточнить значение EPS
-#define FLOAT_EPS 1e-4f
+#include <stdlib.h>
 
 int isEqualStatData(const StatData *lhs, const StatData *rhs)
 {
