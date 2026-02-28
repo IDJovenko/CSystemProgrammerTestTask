@@ -9,9 +9,14 @@
 
 ssize_t StoreDump(const StatData *data, size_t size, const char *filename)
 {
-    if (data == NULL || filename == NULL) {
+    if ((data == NULL && size != 0)) {
         errno = EINVAL;
-        perror("StoreDump");
+        perror("StoreDump: 'data' argument is NULL, but 'size' isn't");
+        return -1;
+    }
+    if (filename == NULL) {
+        errno = EINVAL;
+        perror("StoreDump: 'filename' argument is NULL");
         return -1;
     }
     if (size > MAX_STATDATA_ARRAY_SIZE) {

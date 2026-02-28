@@ -8,10 +8,6 @@
 #include <string.h>
 #include <time.h>
 
-static const StatData empty_array_stub[] = {
-	{.id = 0, .count = 0, .cost = 0.0f, .primary = 0, .mode = 0}
-};
-
 static const TestCase tests[] = {
 	{
 		.name = "TC-01: basic merge and sort",
@@ -37,11 +33,11 @@ static const TestCase tests[] = {
 	},
 	{
 		.name = "TC-02: both input files are empty",
-		.in_a = empty_array_stub,
+		.in_a = NULL,
 		.in_a_size = 0,
-		.in_b = empty_array_stub,
+		.in_b = NULL,
 		.in_b_size = 0,
-		.expected = empty_array_stub,
+		.expected = NULL,
 		.expected_size = 0,
 		.input_a_path = "build/case_2_in_a.dump",
 		.input_b_path = "build/case_2_in_b.dump",
@@ -49,7 +45,7 @@ static const TestCase tests[] = {
 	},
 	{
 		.name = "TC-03: one file empty, one has data",
-		.in_a = empty_array_stub,
+		.in_a = NULL,
 		.in_a_size = 0,
 		.in_b = (const StatData[]) {
 			{.id = 3001, .count = 7, .cost = 50.0f, .primary = 1, .mode = 1},

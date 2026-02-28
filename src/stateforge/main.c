@@ -76,8 +76,7 @@ int main(int argc, char *argv[]) {
         fprint_statdata(stdout, &joined[i]);
     }
 
-    StatData empty_stub = {.id = 0, .count = 0, .cost = 0.0f, .primary = 0, .mode = 0};
-    const StatData *to_store = (joined_size == 0) ? &empty_stub : joined;
+    const StatData *to_store = (joined_size == 0) ? NULL : joined;
 
     if (StoreDump(to_store, (size_t)joined_size, output_path) < 0) {
         free(data1);

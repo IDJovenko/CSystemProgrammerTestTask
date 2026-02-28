@@ -6,6 +6,12 @@
 
 int isEqualStatData(const StatData *lhs, const StatData *rhs)
 {
+	if (lhs == NULL && rhs == NULL) {
+		return 1;
+	}
+	else if (lhs == NULL || rhs == NULL){
+		return 0;
+	}
 	if (lhs->id != rhs->id) {
 		return 0;
 	}
